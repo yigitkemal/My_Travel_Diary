@@ -23,6 +23,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.mytraveldiary.databinding.ActivityMapsBinding
+import com.example.mytraveldiary.model.Place
 import com.google.android.gms.maps.model.Marker
 import com.google.android.material.snackbar.Snackbar
 
@@ -137,7 +138,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLon
     }
 
     fun save(view: View){
-
+        val place = Place("Altinoluk",39.5678031, 26.802981)
     }
 
     fun delete(view: View){
