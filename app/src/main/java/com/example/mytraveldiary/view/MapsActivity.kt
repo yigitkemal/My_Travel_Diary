@@ -75,6 +75,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLon
 
         db = Room.databaseBuilder(applicationContext, PlaceDatabase::class.java, "Places").build()
 
+        binding.mapsSaveButton.isEnabled = false
 
         placeDao = db.placeDao()
     }
@@ -211,6 +212,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLon
 
         selectedLatitute = p0.latitude
         selectedLongitute = p0.longitude
+        binding.mapsSaveButton.isEnabled = true
     }
 
     fun save(view: View) {
