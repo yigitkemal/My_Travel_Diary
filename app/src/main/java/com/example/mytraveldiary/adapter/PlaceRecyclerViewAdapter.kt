@@ -24,7 +24,10 @@ class PlaceRecyclerViewAdapter(val placeList: List<Place>):
     override fun onBindViewHolder(holder: PlaceRecyclerViewHolder, position: Int) {
         holder.listItemMainBinding.listItemTextview.text = placeList[position].name
         holder.itemView.setOnClickListener{
-            holder.itemView.context.startActivity(Intent(holder.itemView.context,MapsActivity::class.java))
+            val intent = Intent(holder.itemView.context,MapsActivity::class.java)
+            intent.putExtra("selectedPlace",placeList.get(position))
+            intent.putExtra("info","old")
+            holder.itemView.context.startActivity(intent)
         }
     }
 
